@@ -24,10 +24,9 @@
   <ul class="events-list">
   {% set current_header = null %}
   {% for event in events %}
-      {% set date_header = event.header.event.start|date('F d') %}
-      {% if date_header != current_header %}
-      <li class="event-day">{{ date_header }}</li>
-      <li class="event-dow">{{ event.header.event.start|date('l') }}</li>
+      {% if date_header %}
+      <li class="event-day">{{ page.header.event.start|date("d") }}. {{ config.plugins.events.date_format.translate ? 'MONTHS_OF_THE_YEAR'|ta(page.header.event.start|date('n') - 1) : page.header.event.start|date('M') }}</li>
+      <li class="event-dow">{{ config.plugins.events.date_format.translate ? 'DAYS_OF_THE_WEEK'|ta(page.header.event.start|date('j') - 1) : page.header.event.start|date('l') }}</li>
       {% endif %}
       <li>
           <time datetime="{{ event.header.event.start|date("c") }}">{{ event.header.event.start|date('G:i')}}</time>
