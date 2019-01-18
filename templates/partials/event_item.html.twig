@@ -5,7 +5,7 @@
           <span class="day">{{ page.header.event.start|date("d") }}</span>
           <span class="month">{{ config.plugins.events.date_format.translate ? 'MONTHS_OF_THE_YEAR'|ta(page.header.event.start|date('n') - 1) : page.header.event.start|date('M') }}</span>
           <span class="time">
-              {{ page.header.event.start|date('g:ia') }}&ndash;{{ page.header.event.end|date('g:ia') }}
+              {{ page.header.event.start|date('h:m') }}&ndash;{{ page.header.event.end|date('h:m') }}
           </span>
           <span class="year">{{ page.header.event.start|date("Y") }}</span>
       </time>

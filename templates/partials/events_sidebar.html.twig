@@ -30,7 +30,7 @@
       <li class="event-dow">{{ event.header.event.start|date('l') }}</li>
       {% endif %}
       <li>
-          <time datetime="{{ event.header.event.start|date("c") }}">{{ event.header.event.start|date('g:i a')}}</time>
+          <time datetime="{{ event.header.event.start|date("c") }}">{{ event.header.event.start|date('h:m')}}</time>
           <a href="{{ event.url }}" class="u-url p-name">{{ event.title }}</a>
       </li>
       {% set current_header = event.header.event.start|date('F d') %}
